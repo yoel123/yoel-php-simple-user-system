@@ -1,6 +1,6 @@
 this is an oop user system i created.
 
-features:
+features:<br>
 *login<br>
 *register<br>
 *user activate(via mail)<br>
