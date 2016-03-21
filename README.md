@@ -1,13 +1,13 @@
 this is an oop user system i created.
 
 features:
-*login
-*register
-*user activate(via mail)
-*password recovery/reset(also via mail for security)
-*check user permission level
-*get user by id
-*and a few other helper class
+*login<br>
+*register<br>
+*user activate(via mail)<br>
+*password recovery/reset(also via mail for security)<br>
+*check user permission level<br>
+*get user by id<br>
+*and a few other helper class<br>
 
 also included example usage files with bootstrap forms.
 in each class theirs also examples of how to use them and sql table structure explained. 
