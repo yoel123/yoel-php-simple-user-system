@@ -24,9 +24,9 @@ ini_set('display_errors', 1);
 
 	if(isset($_POST['user_submit']))
 	{
-		$email = $_POST['email'];
-		$pass = $_POST['password'];
-		$name = $_POST['name'];
+		$email = mysql_real_escape_string($_POST['email']);
+		$pass = mysql_real_escape_string($_POST['password']);
+		$name = mysql_real_escape_string($_POST['name']);
 		$yuser = new y_user($pdo, $email,$pass );
 
 		//createUser($name="new user",$level=3,$activated=0)
