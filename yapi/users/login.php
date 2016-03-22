@@ -9,8 +9,8 @@ $pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
 
 if(isset($_POST['email']))
 {
-	$email =$_POST['email'];
-	$pass = $_POST['password'];
+	$email = mysql_real_escape_string($_POST['email']);
+	$pass = mysql_real_escape_string($_POST['password']);
 	$yuser = new y_user($pdo, $email,$pass );
 	$user_id = $yuser->login();
 
