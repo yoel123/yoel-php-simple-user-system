@@ -58,7 +58,7 @@ class y_activate
     {
 		//if no code exit
 		if(!isset($_GET['code'])){return false;}
-		$code = mysql_real_escape_string($_GET['code']);
+		$code = $_GET['code'];
 		//call data from sql
 		$stmt = $this->_db->prepare('SELECT * FROM activation_codes WHERE activation_code=?');
         $stmt->execute(array($code));
