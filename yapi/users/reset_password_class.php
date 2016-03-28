@@ -74,7 +74,7 @@ class y_reset_password
     {
 		//if no code exit
 		if(!isset($_GET['code'])){return false;}
-		$code = mysql_real_escape_string($_GET['code']);
+		$code = $_GET['code'];
 		//call data from sql
 		$stmt = $this->_db->prepare('SELECT * FROM reset_pasword_codes WHERE reset_code=?');
         $stmt->execute(array($code));
