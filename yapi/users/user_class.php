@@ -50,6 +50,10 @@ class y_user
 		$_SESSION['yuser_id'] = $user['id'];
 		$_SESSION['yuser_level'] = $user['user_level'];
         $_SESSION['yuser_active'] = $user['activated'];
+		
+		setcookie( "yuser_id", $user['id'], strtotime( '3 days' ) );
+		setcookie( "yuser_level", $user['user_level'], strtotime( '3 days' ) );
+		setcookie( "yuser_active", $user['activated'], strtotime( '3 days' ) );
 	}//end login_session
 	
 	/*
@@ -63,6 +67,10 @@ class y_user
 		$_SESSION['yuser_id'] = null;
 		$_SESSION['yuser_level'] = null;
         $_SESSION['yuser_active'] = null;
+		
+		setcookie( "yuser_id", null, strtotime( '3 days' ) );
+		setcookie( "yuser_level", null, strtotime( '3 days' ) );
+		setcookie( "yuser_active", null, strtotime( '3 days' ) );
 	}//end login_session
 	//y_user::log_out();
 	
@@ -74,11 +82,12 @@ class y_user
 	*/
 	public static  function permission($level)
     {
-		//chack session
-		if(!isset($_SESSION['yuser_id'])){return false;}
+		//chack session !isset($_SESSION['yuser_id']) |||||$_SESSION['yuser_level'] <=$level 
+		//chack _COOKIE
+		if( !isset($_COOKIE['yuser_id']) ){return false;}
 		//get user
 		//chack user level
-		if($_SESSION['yuser_level'] <=$level)
+		if( $_COOKIE['yuser_level'] <=$level)
 		{
 			return true;
 		}
